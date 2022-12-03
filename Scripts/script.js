@@ -7,6 +7,8 @@ $(window).on("load", function() {
 $('#continueButton1').hide();
 
 
+// regex
+
 var yesRegex = /^(y|Y)$/ ;
 var noRegex = /^(n|N)$/ ;
 var continueRegex = /^(c|C)$/ ;
@@ -85,13 +87,12 @@ function lifeCounter() {
 
 
 
-var gameStarted = true;
+
 
 
 
 function startGameYN() {
    
-    if(gameStarted === true){
   document.addEventListener('keydown', (event) => {
     
   var name = event.key;
@@ -106,11 +107,9 @@ function startGameYN() {
     gameStarted = false;
   }
 }, false);
-    } else {
+    
       this.removeEventListener('click', arguments.callee);
-    }
-this.removeEventListener('click', arguments.callee);
-   
+       
 }
 
 startGameYN();
