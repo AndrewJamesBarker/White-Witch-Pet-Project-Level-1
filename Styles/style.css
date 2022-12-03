@@ -1,0 +1,249 @@
+
+/* © Andrew Barker 2022 */
+
+/* cursor blink from Amit Merchant https://www.amitmerchant.com/simple-blinking-cursor-animation-using-css/ 
+with some of my own tweaking and experimenting.I had to trial and error with cubic-bezier setting(which i only understance a little bit) 
+in order to get the cursor to turn completely white in its end stage*/
+
+/* @import "resets/normalize.scss";
+@import "resets/reset.local.scss"; */
+
+/* Conch image drawn by me */
+/* skull and crossbones image adobe stock */
+
+html {
+  box-sizing:border-box;
+}
+*, *::before, *::after {
+  box-sizing:inherit;
+}
+
+
+body {
+  color: white;
+  background-color: black;
+}
+
+#backgroundTrident {
+  padding-top: 1.5em;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-image: url(../images/trident.png);
+  /* background-image: url(../images/Untitled_Artwork.tiff); */
+}
+
+#startBox {
+  margin-top: .5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+#mainBox {
+ max-width: 75%;
+ margin-bottom: 0%;
+}
+
+#mainBox, h2, h3, p {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 1em;
+}
+
+
+
+/* flashing cursor */
+
+.cursorBox h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.cursorBox h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+} 
+
+@keyframes cursor-blink  {
+  from {
+      opacity: 0;
+      
+  }
+  to {
+    opacity: 1;
+  }
+  }
+
+
+.cursorBox h3::after {
+  content: "";
+  opacity: 1;
+  width: 3px;
+  height: 18px;
+  background: white;
+  display: inline-block;
+  animation: cursor-blink 1.2s steps(2) infinite;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+.cursorBox h2::after {
+  margin-left: 1px;
+  content: "";
+  opacity: 1;
+  width: 3px;
+  height: 20px;
+  background: white;
+  display: inline-block;
+  animation: cursor-blink 1.2s steps(2) infinite;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+} */
+
+/* Display variation */
+
+/* 
+font and text */
+
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  line-height: 2.2em;
+  font-size: 1.3em;
+   max-width: 70%;
+   padding-bottom: 0;
+}
+
+h3 {
+  font-size: 1.4em;
+  padding-bottom: 3px;
+  font-weight: normal;
+}
+
+/* Button stuff */
+
+
+#backButtonBox {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.4em 0;
+  text-align: center;
+}
+
+#backButton1, #continueButton1 {
+  margin: 0 1.2em;
+}
+
+#buttonContainer {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6px;
+  display:grid;
+  column-gap: 0;
+  row-gap :0;
+  justify-content:center;
+  align-items: center;
+  grid-template-columns:repeat(2, 200px);
+  grid-template-rows:repeat(5, 80px);
+  grid-template-areas:  "item0 item0"
+                        "item1 item2"
+                        "item3 item4"
+                        "item5 item6"
+                        "item7 item8";
+}
+
+.item {
+  margin-right: 6px;
+}
+
+.item0 {
+  padding-bottom: .1em;
+  border-bottom: 1px solid white;
+  grid-area: item0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item1 {
+  grid-area:item1;
+}
+.item2 {
+  grid-area:item2;
+}
+.item3 {
+  grid-area:item3;
+}
+.item4 {
+  grid-area:item4;
+}
+.item5 {
+  grid-area:item5;
+}
+.item6 {
+  grid-area:item6;
+}
+.item7 {
+  grid-area:item7;
+}
+.item8 {
+  grid-area:item8;
+}
+
+label {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+button {
+  font-size: 1em;
+  transition: .3s;
+  padding: 4px 12px;
+  color: white;
+  background-color: black;
+  min-width: 48px;
+  min-height: 32px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+background-color: white;
+color: black;
+}
+
+/* items */
+
+#conch {
+  
+  padding: .2em;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: rgb(55, 158, 202); */
+  background-image: linear-gradient(rgb(55, 158, 202),rgb(255, 202, 116));
+  border-radius: 50%;
+}
+
+#skullXBones {
+  padding: 3px;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#itemsAndLives {
+  position: fixed;
+  left: 75%;
+  top: 88%;
+}
