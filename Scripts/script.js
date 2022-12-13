@@ -31,7 +31,7 @@ var buttonMenu = document.getElementById("buttonContainer");
 var buttonOne = document.getElementById("button1");
 var buttonTwo = document.getElementById("button2");
 var buttonThree = document.getElementById("button3");
-var exploreButton= document.getElementById("button4");
+var exploreButton= document.getElementById("exploreButton");
 
 var backButtonBox = document.getElementById("backButtonBox");
 var backButton1 = document.getElementById("backButton1")
@@ -52,6 +52,7 @@ var backButtonFlag = true;
 var continueButtonFlag = true;
 var skullFlag = true;
 var restartButtonFlag = true;
+var exploreButtonFlag = true;
 var livesLostCounter = 0;
 
 
@@ -84,11 +85,6 @@ function lifeCounter() {
     $(liveOne).hide();
   }
 }
-
-
-
-
-
 
 
 function startGameYN() {
@@ -148,10 +144,16 @@ function chapterOne() {
 function chapterOneCont() {
   continueRegex = false;
   yesRegex = false;
-  this.removeEventListener('click', arguments.callee);
+  exploreButtonFlag = false;
   skullFlag = false;
+
+  this.removeEventListener('click', arguments.callee);
+  
   if (backButtonFlag === false) {
     $(backButton1).hide();
+  }
+  if (exploreButtonFlag === false) {
+    $(exploreButton).hide();
   }
   if (continueButtonFlag === false) {
     $('#continueButton1').hide();
@@ -200,25 +202,32 @@ function buttonOneResponse(){
 // 2 pick up conch
 
 function buttonTwoResponse(){
+  exploreButtonFlag = true
+  if(exploreButtonFlag === true) {
+    $(exploreButton).show();
+  }
   $(restartButton).hide();
   continueButtonFlag = true;
   if(continueButtonFlag === true) {
     $('#continueButton1').show();
   }
   
-  backButtonFlag = true;
-  if(backButtonFlag === true) {
-  $(backButton1).show();
-  }
   buttonMenu.style.display = "none";
-  backButtonBox.style.display = "block";
+ 
   mainText.innerHTML = "<p>A conch shell, lovely in the way it reflects the light. It seems to swirl like a galaxy. There's something impenetrable about it, as though it doesn't fully exist in any one place at any given time.</p>"
-  backButton1.addEventListener("click", backResponse);
-  function backResponse() {
-    backButtonFlag = false;
-    continueButtonFlag = false;
-    chapterOneCont();
+
+  backButtonFlag = false;
+  if(backButtonFlag === false) {
+  $(backButton1).hide();
   }
+    // backButton1.addEventListener("click", backResponse);
+  // function backResponse() {
+  //   backButtonFlag = false;
+  //   continueButtonFlag = false;
+  //   chapterOneCont();
+  // }
+  backButtonBox.style.display = "block";
+
 }
 
 
@@ -256,8 +265,15 @@ function buttonThreeResponse(){
 // 4 explore
 
 function exploreButtonResponse(){
-  $(restartButton).hide();
+  // $(restartButton).hide();
   alert("Four!!");
+  exploreChapter();
+}
+
+
+function exploreChapter(){
+  $(exploreButton).hide();
+  mainText.innerHTML = "<p>Congratulations! You've aquired something of special value</p><p>...as you will soon learn.</p><p>The Siren nods at you with approval and gestures for you to explore a little.</p>";
 }
 
 });
