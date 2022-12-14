@@ -222,13 +222,7 @@ background-color: white;
 color: black;
 }
 
-#directionalKeys {
-text-align: center;
-}
 
-#left {
-
-}
 #left:hover {
   cursor: pointer;
 }
@@ -243,9 +237,9 @@ text-align: center;
 }
 
 #directionalKeys {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+  position: fixed;
+  left: 46.5%;
+  top: 42%;
 }
 
 #fullDirectionalPad:hover {
@@ -260,8 +254,15 @@ text-align: center;
   margin-left: auto;
   margin-right: auto;
   /* background-color: rgb(55, 158, 202); */
-  background-image: linear-gradient(rgb(55, 158, 202),rgb(255, 202, 116));
-  border-radius: 50%;
+  /* background-image: linear-gradient(rgb(55, 158, 202),rgb(255, 202, 116)); */
+  /* border-radius: 50%; */
+}
+
+#items {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 650px;
 }
 
 #skullXBones {
@@ -278,14 +279,12 @@ text-align: center;
 }
 
 #ear {
-  padding: .2em;
-  margin-top: 1em;
+  display: inline-block;
   margin-left: auto;
   margin-right: auto;
 }
 
-
-#compass_white {
-  
-  
+#longArrow {
+  margin-bottom: 40px;
 }
+

@@ -46,14 +46,19 @@ var downClick = document.getElementById("down");
 
 
 
-// object variables
+// item variables
 
 var conchShell = document.getElementById("conch");
 var skullXBones = document.getElementById("skullXBones");
+var ear = document.getElementById("ear");
 var satchel = document.getElementById("satchel");
 var liveOne = document.getElementById("lifeOne");
 var liveTwo = document.getElementById("lifeTwo");
 var liveThree = document.getElementById("lifeThree");
+var longArrow = document.getElementById("longArrow");
+
+$(ear).hide();
+$(longArrow).hide();
 
 // Flag Variables 
 
@@ -211,38 +216,6 @@ function buttonOneResponse(){
 // 2 pick up conch
 
 function buttonTwoResponse(){
-  exploreButtonFlag = true
-  if(exploreButtonFlag === true) {
-    $(exploreButton).show();
-  }
-  $(restartButton).hide();
-  continueButtonFlag = true;
-  if(continueButtonFlag === true) {
-    $('#continueButton1').show();
-  }
-  
-  buttonMenu.style.display = "none";
- 
-  mainText.innerHTML = "<p>A conch shell, lovely in the way it reflects the light. It seems to swirl like a galaxy. There's something impenetrable about it, as though it doesn't fully exist in any one place at any given time.</p>"
-
-  backButtonFlag = false;
-  if(backButtonFlag === false) {
-  $(backButton1).hide();
-  }
-    // backButton1.addEventListener("click", backResponse);
-  // function backResponse() {
-  //   backButtonFlag = false;
-  //   continueButtonFlag = false;
-  //   chapterOneCont();
-  // }
-  backButtonBox.style.display = "block";
-
-}
-
-
-// 3 attack siren
-
-function buttonThreeResponse(){
   $(restartButton).hide();
   livesLostCounter ++;
    
@@ -269,6 +242,39 @@ function buttonThreeResponse(){
   chapterOneCont();
   };
   lifeCounter(); 
+
+}
+
+
+// 3 attack siren
+
+function buttonThreeResponse(){
+ 
+  exploreButtonFlag = true
+  if(exploreButtonFlag === true) {
+    $(exploreButton).show();
+  }
+  $(restartButton).hide();
+  continueButtonFlag = true;
+  if(continueButtonFlag === true) {
+    $('#continueButton1').show();
+  }
+  
+  buttonMenu.style.display = "none";
+ 
+  mainText.innerHTML = "<p>A conch shell, lovely in the way it reflects the light. It seems to swirl like a galaxy. There's something impenetrable about it, as though it doesn't fully exist in any one place at any given time.</p>"
+
+  backButtonFlag = false;
+  if(backButtonFlag === false) {
+  $(backButton1).hide();
+  }
+    // backButton1.addEventListener("click", backResponse);
+  // function backResponse() {
+  //   backButtonFlag = false;
+  //   continueButtonFlag = false;
+  //   chapterOneCont();
+  // }
+  backButtonBox.style.display = "block";
 }
 
 // 4 explore
@@ -278,10 +284,11 @@ function exploreButtonResponse(){
   exploreChapter();
 }
 
-
-
-
 function exploreChapter(){
+  $(ear).hide();
+  $(longArrow).hide();
+  $(conchShell).hide();
+  $(backButton1).hide();
   $(exploreButton).hide();
   $(directionalPad).show();
   mainText.innerHTML = "<p>Congratulations! You've aquired an item of particular value</p><p>...as you will soon learn.</p><p>The Siren nods at you with approval and gestures for you to explore your surroundings.</p>";
@@ -313,7 +320,18 @@ function exploreChapter(){
 function westResponse() {
   mainText.innerHTML = "<p>The Siren flashes a razor tooth smile and tries to communicate with you again.  Is there a ringing in your ears?</p>"
   $(directionalPad).hide();
-$(conchShell).hide();
+  $(ear).show();
+$(longArrow).show();
+$(conchShell).css({
+	'display': 'inline-block'
+  
+});
+$(backButton1).show();
+backButton1.addEventListener("click", backResponse2);
+function backResponse2() {
+  backButtonFlag = false;
+exploreChapter();
+};
 }
 
 function northResponse() {
@@ -326,7 +344,7 @@ function eastResponse() {
 }
 
 function southResponse() {
-  mainText.innerHTML = "<p>To your south, you see an immense cape strutting out into the sea, overshadowed and blended into a gnarly mountain like a giant rotting tooth.</p>"
+  mainText.innerHTML = "<p>To your south, you see an immense cape strutting out into the sea, overshadowed and blended into a gnarly, giant rotting tooth-resembling mountain.</p>"
 }
 
 });
