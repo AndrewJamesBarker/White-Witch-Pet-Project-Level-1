@@ -37,6 +37,15 @@ var backButtonBox = document.getElementById("backButtonBox");
 var backButton1 = document.getElementById("backButton1")
 var restartButton = document.getElementById("restartButton");
 
+var directionalPad = document.getElementById("directionalKeys");
+$(directionalPad).hide();
+var leftClick = document.getElementById("left");
+var upClick = document.getElementById("up");
+var rightClick = document.getElementById("right");
+var downClick = document.getElementById("down");
+
+
+
 // object variables
 
 var conchShell = document.getElementById("conch");
@@ -55,6 +64,12 @@ var restartButtonFlag = true;
 var exploreButtonFlag = true;
 var livesLostCounter = 0;
 
+// button event listeners
+
+buttonOne.addEventListener("click", buttonOneResponse);
+buttonTwo.addEventListener("click", buttonTwoResponse);
+buttonThree.addEventListener("click", buttonThreeResponse);
+exploreButton.addEventListener("click", exploreButtonResponse);
 
 
 // reusable functions
@@ -86,6 +101,8 @@ function lifeCounter() {
   }
 }
 
+
+// Start Game //
 
 function startGameYN() {
    
@@ -168,14 +185,6 @@ function chapterOneCont() {
   buttonMenu.style.textTransform = "uppercase";
   mainText.innerHTML = "<p>You are standing on the beach of a foggy cove. Ten feet out from shore, a beautiful woman sits on a protruding rock. She smiles at you seductively and begins singing a song. Strangely, you hear nothing but the waves lapping at your feet. Press C to continue.</p> <h3> As you struggle to hear the Siren’s song, a conch shell washes up on the beach.</h3>";
 }
-
-// button event listeners
-
-buttonOne.addEventListener("click", buttonOneResponse);
-buttonTwo.addEventListener("click", buttonTwoResponse);
-buttonThree.addEventListener("click", buttonThreeResponse);
-exploreButton.addEventListener("click", exploreButtonResponse);
-
 
 
 // button chapter 1 responses
@@ -266,14 +275,58 @@ function buttonThreeResponse(){
 
 function exploreButtonResponse(){
   // $(restartButton).hide();
-  alert("Four!!");
   exploreChapter();
 }
 
 
+
+
 function exploreChapter(){
   $(exploreButton).hide();
-  mainText.innerHTML = "<p>Congratulations! You've aquired something of special value</p><p>...as you will soon learn.</p><p>The Siren nods at you with approval and gestures for you to explore a little.</p>";
+  $(directionalPad).show();
+  mainText.innerHTML = "<p>Congratulations! You've aquired an item of particular value</p><p>...as you will soon learn.</p><p>The Siren nods at you with approval and gestures for you to explore your surroundings.</p>";
+
+// Has coordinate map for directional clicks
+
+  $(leftClick).on('click', function(){
+    westResponse();
+  });
+
+  
+  $(upClick).on('click', function(){
+    northResponse(); 
+    });
+
+
+  $(rightClick).on('click', function(){
+    eastResponse();
+    });
+
+  $(downClick).on('click', function(){
+    southResponse();
+    });
+
+}
+
+// explore responses //
+
+function westResponse() {
+  mainText.innerHTML = "<p>The Siren flashes a razor tooth smile and tries to communicate with you again.  Is there a ringing in your ears?</p>"
+  $(directionalPad).hide();
+$(conchShell).hide();
+}
+
+function northResponse() {
+  mainText.innerHTML = "<p>To your north, you see a mystical range of pastel mountains, something of a mirage.</p>"
+ 
+}
+
+function eastResponse() {
+  mainText.innerHTML = "<p>To your east, you see a wet reedy marsh extending for miles with what looks like civilization on its distant horizon.</p>"
+}
+
+function southResponse() {
+  mainText.innerHTML = "<p>To your south, you see an immense cape strutting out into the sea, overshadowed and blended into a gnarly mountain like a giant rotting tooth.</p>"
 }
 
 });

@@ -222,6 +222,35 @@ background-color: white;
 color: black;
 }
 
+#directionalKeys {
+text-align: center;
+}
+
+#left {
+
+}
+#left:hover {
+  cursor: pointer;
+}
+#up:hover {
+  cursor: pointer;
+}
+#right:hover {
+  cursor: pointer;
+}
+#down:hover {
+  cursor: pointer;
+}
+
+#directionalKeys {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#fullDirectionalPad:hover {
+  cursor: pointer;
+}
 /* items */
 
 #conch {
@@ -246,4 +275,17 @@ color: black;
   position: fixed;
   left: 75%;
   top: 88%;
+}
+
+#ear {
+  padding: .2em;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#compass_white {
+  
+  
 }
