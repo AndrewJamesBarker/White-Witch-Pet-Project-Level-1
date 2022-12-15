@@ -319,13 +319,33 @@ function exploreChapter(){
 
 function westResponse() {
   mainText.innerHTML = "<p>The Siren flashes a razor tooth smile and tries to communicate with you again.  Is there a ringing in your ears?</p>"
+
   $(directionalPad).hide();
   $(ear).show();
 $(longArrow).show();
 $(conchShell).css({
 	'display': 'inline-block'
-  
 });
+
+$(conchShell).draggable({
+  containment: 'document',
+  cursor: 'move',
+  revert: true
+});
+
+$(ear).droppable({
+  accept: conchShell,
+  hoverClass: 'hovered',
+  drop: drop
+});
+
+function drop(event, ui) {
+  event.preventDefault();
+  var draggable = ui.draggable;
+  $(backButton1).hide();
+  successChapter();
+}
+
 $(backButton1).show();
 backButton1.addEventListener("click", backResponse2);
 function backResponse2() {
@@ -344,8 +364,20 @@ function eastResponse() {
 }
 
 function southResponse() {
-  mainText.innerHTML = "<p>To your south, you see an immense cape strutting out into the sea, overshadowed and blended into a gnarly, giant rotting tooth-resembling mountain.</p>"
+  mainText.innerHTML = "<p>To your south, you see an immense cape strutting out into the sea, overshadowed and blended into a gnarly, giant rotten tooth mountain.</p>"
 }
+
+function successChapter() {
+  $(ear).hide();
+  $(longArrow).hide();
+  $(conchShell).hide();
+  $(backButton1).hide();
+  $(exploreButton).hide();
+  $(directionalPad).hide();
+
+  mainText.innerHTML = "<p>Ooooch!! Something slithers down your ear canal, tears through your eardrum, and nestles into your cochlea. Overcome with some strange euphoria, you hear a beautiful voice singing:</p>"
+}
+
 
 });
 
