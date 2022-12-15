@@ -56,9 +56,12 @@ var liveOne = document.getElementById("lifeOne");
 var liveTwo = document.getElementById("lifeTwo");
 var liveThree = document.getElementById("lifeThree");
 var longArrow = document.getElementById("longArrow");
+var soundOn = document.getElementById("soundOn");
 
 $(ear).hide();
 $(longArrow).hide();
+$(soundOn).hide();
+
 
 // Flag Variables 
 
@@ -262,7 +265,7 @@ function buttonThreeResponse(){
   
   buttonMenu.style.display = "none";
  
-  mainText.innerHTML = "<p>A conch shell, lovely in the way it reflects the light. It seems to swirl like a galaxy. There's something impenetrable about it, as though it doesn't fully exist in any one place at any given time.</p>"
+  mainText.innerHTML = "<p>A conch shell, lovely in the way it reflects the light. It seems to swirl like the milky way, though there's something ephemeral about it, as though it doesn't fully exist in any place at any given time.</p>"
 
   backButtonFlag = false;
   if(backButtonFlag === false) {
@@ -375,18 +378,16 @@ function successChapter() {
   $(exploreButton).hide();
   $(directionalPad).hide();
 
-  mainText.innerHTML = "<p>Ooooch!! Something slithers down your ear canal, tears through your eardrum, and nestles into your cochlea. Overcome with some strange euphoria, you hear a beautiful voice singing:</p>"
+  mainText.innerHTML = "<p>Oooouch!! Something slithers down your ear canal, tears through your eardrum, and nestles into your cochlea. Overcome with some strange euphoria, you hear a beautiful voice singing:</p>"
+  function timesUp() {
+  span6.innerHTML = "Time's up!";
 }
 
+function timesUp() {
+  $(soundOn).show();
+}
+setTimeout(timesUp, 5000);
+}
 
 });
 
-// Timer for exploring later on
-
-
-// function timesUp() {
-//   span6.innerHTML = "Time's up!";
-// }
-
-
-// setTimeout(timesUp, 120000);
