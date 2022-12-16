@@ -322,7 +322,7 @@ function exploreChapter(){
 // explore responses //
 
 function westResponse() {
-  mainText.innerHTML = "<p>The Siren flashes a razor tooth smile and tries to communicate with you again.  Is there a ringing in your ears?</p>"
+  mainText.innerHTML = "<p>To your west, the Siren flashes a razor tooth smile and tries to communicate with you again.  Is there a ringing in your ears?</p>"
 
   $(directionalPad).hide();
   $(ear).show();
@@ -350,12 +350,12 @@ function drop(event, ui) {
   successChapter();
 }
 
-$(backButton1).show();
-backButton1.addEventListener("click", backResponse2);
-function backResponse2() {
-  backButtonFlag = false;
-exploreChapter();
-};
+// $(backButton1).show();
+// backButton1.addEventListener("click", backResponse2);
+// function backResponse2() {
+// backButtonFlag = false;
+// exploreChapter();
+// };
 }
 
 function northResponse() {
