@@ -57,6 +57,7 @@ var liveTwo = document.getElementById("lifeTwo");
 var liveThree = document.getElementById("lifeThree");
 var longArrow = document.getElementById("longArrow");
 var soundOn = document.getElementById("soundOn");
+var music = document.getElementById('player_audio');
 
 $(ear).hide();
 $(longArrow).hide();
@@ -384,9 +385,22 @@ function successChapter() {
 }
 
 function timesUp() {
+  music.play();
   $(soundOn).show();
+  setTimeout(timedMessage, 40000);
+  function timedMessage() {
+    $(soundOn).hide();
+    mainText.innerHTML = "<p>The Siren speaks, “You are brave, and it is noble of you to seek to help your people in this dark age… but if you are to succeed, you will need powers beyond your means. Go to the Cave of Mirrors, retrieve the Pearl Of The Moon, and free my sister, The White Witch. Only she can match the evil that is afoot.”</p>"
+    setTimeout(levelComplete, 12000);
+  }
+}
+
+function levelComplete() {
+  mainText.innerHTML = `<p>Congratulations, and thanks for playing!</p><p>Would you like to see what happens next? If so, you can support me by purchasing the accompanying album here: <a href="https://andrewjamesbarker.bandcamp.com/" >Coming soon!</a></p><p>PS There is a secret code that comes with the download that will gain you access to level 2 when it comes out!</p>`;
 }
 setTimeout(timesUp, 5000);
+
+
 }
 
 });

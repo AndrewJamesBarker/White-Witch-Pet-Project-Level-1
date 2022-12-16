@@ -53,7 +53,18 @@ body {
   line-height: 1em;
 }
 
+a {
+  color: rgb(0, 132, 255);
+}
 
+a:hover {
+  cursor: pointer;
+  color: rgb(255, 97, 247);
+}
+
+a::after {
+  color: rgb(31, 214, 255);
+}
 
 /* flashing cursor */
 
@@ -103,20 +114,16 @@ body {
   display: inline-block;
   animation: cursor-blink 1.2s steps(2) infinite;
   animation-timing-function: cubic-bezier(1, 0, 0, 1);
-} */
+} 
 
-/* Display variation */
-
-/* 
-font and text */
 
 h2 {
   font-size: 1.5em;
 }
 
 p {
-  line-height: 2.2em;
-  font-size: 1.3em;
+   line-height: 2.2em;
+   font-size: 1.3em;
    max-width: 70%;
    padding-bottom: 0;
 }
