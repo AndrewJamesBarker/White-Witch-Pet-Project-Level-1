@@ -38,7 +38,7 @@ var backButton1 = document.getElementById("backButton1")
 var restartButton = document.getElementById("restartButton");
 
 var directionalPad = document.getElementById("directionalKeys");
-$(directionalPad).hide();
+
 var leftClick = document.getElementById("left");
 var upClick = document.getElementById("up");
 var rightClick = document.getElementById("right");
@@ -62,6 +62,7 @@ var music = document.getElementById('player_audio');
 $(ear).hide();
 $(longArrow).hide();
 $(soundOn).hide();
+$(directionalPad).hide();
 
 
 // Flag Variables 
@@ -122,11 +123,11 @@ function startGameYN() {
   if(yesRegex.test(name)) {
     introText.style.display = "none";
     chapterOne();
-    gameStarted = false;
+
   }
   else if (noRegex.test(name)) {
     introText.innerHTML = "<h3>Alright, refresh if you change your mind.</h3>"
-    gameStarted = false;
+    
   }
 }, false);
     
@@ -324,7 +325,7 @@ function exploreChapter(){
 function westResponse() {
   mainText.innerHTML = "<p>To your west, the Siren flashes a razor tooth smile and tries to communicate with you again.  Is there a ringing in your ears?</p>"
 
-  $(directionalPad).hide();
+  // $(directionalPad).hide();
   $(ear).show();
 $(longArrow).show();
 $(conchShell).css({
