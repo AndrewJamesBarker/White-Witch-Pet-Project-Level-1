@@ -392,7 +392,7 @@ function timesUp() {
   function timedMessage() {
     $(soundOn).hide();
     mainText.innerHTML = "<p>The Siren speaks, “You are brave, and it is noble of you to seek to help your people in this dark age… but if you are to succeed, you will need powers beyond your means. Go to the Cave of Mirrors, retrieve the Pearl Of The Moon, and free my sister, The White Witch. Only she can match the evil that is afoot.”</p>"
-    setTimeout(levelComplete, 12000);
+    setTimeout(levelComplete, 14000);
   }
 }
 
