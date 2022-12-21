@@ -5,6 +5,15 @@ $(window).on("load", function() {
 // hidden stuff
 
 $('#continueButton1').hide();
+$('#itemsAndLives').hide();
+$('#lifeOne').hide();
+$('#lifeTwo').hide();
+$('#lifeThree').hide();
+$('#conch').hide();
+$('#skullXBones').hide();
+$('#mainBox').hide();
+$('#buttonContainer').hide();
+$('#backButtonBox').hide();
 
 
 // regex
