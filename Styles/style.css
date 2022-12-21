@@ -246,6 +246,7 @@ color: black;
 }
 
 #directionalKeys {
+  border: none;
   display: none;
   position: relative;
   left: 46.5%;
