@@ -2,20 +2,6 @@
 $(window).on("load", function() {
 
 
-// hidden stuff
-
-$('#continueButton1').hide();
-$('#itemsAndLives').hide();
-$('#lifeOne').hide();
-$('#lifeTwo').hide();
-$('#lifeThree').hide();
-$('#conch').hide();
-$('#skullXBones').hide();
-$('#mainBox').hide();
-$('#buttonContainer').hide();
-$('#backButtonBox').hide();
-
-
 // regex
 
 var yesRegex = /^(y|Y)$/ ;
@@ -67,6 +53,20 @@ var liveThree = document.getElementById("lifeThree");
 var longArrow = document.getElementById("longArrow");
 var soundOn = document.getElementById("soundOn");
 var music = document.getElementById('player_audio');
+
+// hidden stuff
+
+$('#continueButton1').hide();
+$('#itemsAndLives').hide();
+$('#lifeOne').hide();
+$('#lifeTwo').hide();
+$('#lifeThree').hide();
+$('#conch').hide();
+$('#skullXBones').hide();
+$('#mainBox').hide();
+$('#buttonContainer').hide();
+$('#backButtonBox').hide();
+
 
 $(ear).hide();
 $(longArrow).hide();
