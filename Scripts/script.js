@@ -53,6 +53,7 @@ var liveThree = document.getElementById("lifeThree");
 var longArrow = document.getElementById("longArrow");
 var soundOn = document.getElementById("soundOn");
 var music = document.getElementById('player_audio');
+var itemsBox = document.getElementById('items');
 
 // hidden stuff
 
@@ -72,6 +73,7 @@ $(ear).hide();
 $(longArrow).hide();
 $(soundOn).hide();
 $(directionalPad).hide();
+$(itemsBox).hide();
 
 
 // Flag Variables 
@@ -178,6 +180,7 @@ function chapterOne() {
 
 
 function chapterOneCont() {
+  $(itemsBox).show();
   continueRegex = false;
   yesRegex = false;
   exploreButtonFlag = false;
