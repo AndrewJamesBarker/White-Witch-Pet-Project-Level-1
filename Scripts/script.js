@@ -161,7 +161,7 @@ function chapterOne() {
     if (continueRegex.test(name)) {
       mainText.style.display = "block";
       mainText.style.fontSize = "1.2em";
-      tridentBackGround.style.backgroundImage = "url(/images/Untitled_Artwork.tiff)";
+      tridentBackGround.style.backgroundImage = "url(/Images/Untitled_Artwork.tiff)";
       mainText.innerHTML = "<p>You are standing on the beach of a foggy cove. Ten feet out from shore, a beautiful woman sits on a protruding rock. She smiles at you seductively and begins singing a song. Strangely, you hear nothing but the waves lapping at your feet. Press C to continue.</p>";
       this.removeEventListener('click', arguments.callee);
       document.addEventListener('keydown', (event) => {
