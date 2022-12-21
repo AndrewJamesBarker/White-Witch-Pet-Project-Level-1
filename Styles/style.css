@@ -138,6 +138,7 @@ h3 {
 
 
 #backButtonBox {
+  display: none;
   margin-left: auto;
   margin-right: auto;
   padding: 1.4em 0;
@@ -149,6 +150,7 @@ h3 {
 }
 
 #buttonContainer {
+  display: none;
   margin-left: auto;
   margin-right: auto;
   margin-top: 6px;
@@ -244,6 +246,7 @@ color: black;
 }
 
 #directionalKeys {
+  display: none;
   position: fixed;
   left: 46.5%;
   top: 42%;
@@ -255,7 +258,7 @@ color: black;
 /* items */
 
 #conch {
-  
+  display: none;
   padding: .2em;
   margin-top: 1em;
   margin-left: auto;
@@ -266,6 +269,7 @@ color: black;
 }
 
 #items {
+  
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -273,6 +277,7 @@ color: black;
 }
 
 #skullXBones {
+  display: none;
   padding: 3px;
   margin-top: 1em;
   margin-left: auto;
@@ -280,18 +285,20 @@ color: black;
 }
 
 #itemsAndLives {
+  display: none;
   position: fixed;
   left: 75%;
   top: 88%;
 }
 
 #ear {
-  display: inline-block;
+  display: none;
   margin-left: auto;
   margin-right: auto;
 }
 
 #longArrow {
+  display: none;
   margin-bottom: 40px;
 }
 
