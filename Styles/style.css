@@ -302,3 +302,33 @@ color: black;
   margin-bottom: 40px;
 }
 
+
+/* social media */
+
+#socialMedia {
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#socialMedia a {
+  text-decoration: none;
+  color: none;
+}
+
+#socialMedia a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: none;
+}
+
+#socialMedia a::after {
+  text-decoration: none;
+  color: none;
+}
+
+#instagram, #linkedIn, #twitter, #github {
+  text-decoration: none;
+  margin: 2px;
+}

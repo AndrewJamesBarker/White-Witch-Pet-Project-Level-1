@@ -42,7 +42,7 @@ var downClick = document.getElementById("down");
 
 
 // item variables
-
+var socialMedia = document.getElementById('socialMedia');
 var conchShell = document.getElementById("conch");
 var skullXBones = document.getElementById("skullXBones");
 var ear = document.getElementById("ear");
@@ -56,7 +56,7 @@ var music = document.getElementById('player_audio');
 var itemsBox = document.getElementById('items');
 
 // hidden stuff
-
+$('#socialMedia').hide();
 $('#continueButton1').hide();
 $('#itemsAndLives').hide();
 $('#lifeOne').hide();
@@ -409,7 +409,8 @@ function timesUp() {
 }
 
 function levelComplete() {
-  mainText.innerHTML = `<p>Congratulations, and thanks for playing!</p><p>Would you like to see what happens next? If so, you can support me by purchasing the accompanying album here: <a href="https://andrewjamesbarker.bandcamp.com/" >Coming soon!</a></p><p>PS There is a secret code that comes with the download that will gain you access to level 2 when it comes out!</p>`;
+  mainText.innerHTML = `<p>Congratulations, and thanks for playing!</p><p>Would you like to see what happens next? If so, stay in touch via <a href="https://andrewjamesbarker.bandcamp.com/">Bandcamp</a> and while you're at it, check out the corresponding psych-rock album 'White Witch'.</p>`;
+  $(socialMedia).show();
 }
 setTimeout(timesUp, 5000);
 
