@@ -249,7 +249,7 @@ color: black;
   border: none;
   display: none;
   position: relative;
-  left: 46.5%;
+  text-align: center;
   top: 56%;
 }
 
@@ -264,6 +264,7 @@ color: black;
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
+
   /* background-color: rgb(55, 158, 202); */
   /* background-image: linear-gradient(rgb(55, 158, 202),rgb(255, 202, 116)); */
   /* border-radius: 50%; */
@@ -273,7 +274,7 @@ color: black;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  width: 650px;
+
 }
 
 #skullXBones {
@@ -297,9 +298,23 @@ color: black;
   margin-right: auto;
 }
 
+@keyframes arrowMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(15%);
+  }
+}
+
 #longArrow {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: centery;
   display: none;
   margin-bottom: 40px;
+  animation-name: arrowMove;
+  animation: arrowMove 1s infinite;
 }
 
 
