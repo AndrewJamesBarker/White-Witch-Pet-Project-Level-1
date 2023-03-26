@@ -333,6 +333,7 @@ function exploreChapter(){
 }
 
 // explore responses //
+// directional arrow responses //
 
 function westResponse() {
   mainText.innerHTML = "<p>To your west, the Siren flashes a razor tooth smile and tries to communicate with you again.  Is there a ringing in your ears?</p>"
@@ -363,6 +364,22 @@ function drop(event, ui) {
   successChapter();
 }
 
+document.addEventListener('keydown', (event) => {
+  var name = event.key;
+
+  if (continueRegex.test(name)) {
+    successChapter();
+  }
+
+  },false);
+
+backButton1.addEventListener("click", backResponse);
+  function backResponse() {
+    backButtonFlag = false;
+  chapterOneCont();
+  };
+  lifeCounter(); 
+
 // $(backButton1).show();
 // backButton1.addEventListener("click", backResponse2);
 // function backResponse2() {
@@ -370,6 +387,8 @@ function drop(event, ui) {
 // exploreChapter();
 // };
 }
+
+
 
 function northResponse() {
   mainText.innerHTML = "<p>To your north, you see a mystical range of pastel mountains, something of a mirage.</p>"
@@ -400,7 +419,7 @@ function successChapter() {
 function timesUp() {
   music.play();
   $(soundOn).show();
-  setTimeout(timedMessage, 40000);
+  setTimeout(timedMessage, 30000);
   function timedMessage() {
     $(soundOn).hide();
     mainText.innerHTML = "<p>The Siren speaks, “You are brave, and it is noble of you to seek to help your people in this dark age… but if you are to succeed, you will need powers beyond your means. Go to the Cave of Mirrors, retrieve the Pearl Of The Moon, and free my sister, The White Witch. Only she can match the evil that is afoot.”</p>"
