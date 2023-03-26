@@ -338,7 +338,28 @@ function exploreChapter(){
 function westResponse() {
   mainText.innerHTML = "<p>To your west, the Siren flashes a razor tooth smile and tries to communicate with you again.  Is there a ringing in your ears?</p>"
 
+// keystroke bypass drag drop, to success
+
+document.addEventListener('keydown', (event) => {
+  var name = event.key;
+
+  if (continueRegex.test(name)) {
+   
+    this.removeEventListener('click', arguments.callee);
+    document.addEventListener('keydown', (event) => {
+      var name = event.key;  
+    
+    if(continueRegex.test(name)) {
+      (successChapter);
+      this.removeEventListener('click', arguments.callee);
+     }
+    },false);
+  }
+}, false);
+
+
   // $(directionalPad).hide();
+  
   $(ear).show();
 $(longArrow).show();
 $(conchShell).css({
@@ -364,14 +385,6 @@ function drop(event, ui) {
   successChapter();
 }
 
-document.addEventListener('keydown', (event) => {
-  var name = event.key;
-
-  if (continueRegex.test(name)) {
-    successChapter();
-  }
-
-  },false);
 
 backButton1.addEventListener("click", backResponse);
   function backResponse() {
@@ -386,6 +399,7 @@ backButton1.addEventListener("click", backResponse);
 // backButtonFlag = false;
 // exploreChapter();
 // };
+
 }
 
 
