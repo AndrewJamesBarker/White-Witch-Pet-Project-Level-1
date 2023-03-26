@@ -340,26 +340,15 @@ function westResponse() {
 
 // keystroke bypass drag drop, to success
 
-document.addEventListener('keydown', (event) => {
-  var name = event.key;
-
-  if (continueRegex.test(name)) {
-   
-    this.removeEventListener('click', arguments.callee);
-    document.addEventListener('keydown', (event) => {
-      var name = event.key;  
-    
-    if(continueRegex.test(name)) {
-      (successChapter);
-      this.removeEventListener('click', arguments.callee);
-     }
-    },false);
+document.addEventListener('keyup', event => {
+  if (event.code === 'Space') {
+    console.log('Space pressed')
   }
-}, false);
+})
 
 
   // $(directionalPad).hide();
-
+  
   $(ear).show();
 $(longArrow).show();
 $(conchShell).css({
