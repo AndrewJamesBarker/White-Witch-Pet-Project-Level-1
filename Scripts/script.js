@@ -359,7 +359,7 @@ document.addEventListener('keydown', (event) => {
 
 
   // $(directionalPad).hide();
-  
+
   $(ear).show();
 $(longArrow).show();
 $(conchShell).css({
@@ -445,7 +445,7 @@ function levelComplete() {
   mainText.innerHTML = `<p>Congratulations, and thanks for playing!</p><p>Would you like to see what happens next? If so, stay in touch via <a href="https://andrewjamesbarker.bandcamp.com/" target="_blank">Bandcamp</a> and while you're at it, check out the corresponding psych-rock album 'White Witch'.</p>`;
   $(socialMedia).show();
 }
-setTimeout(timesUp, 2000);
+setTimeout(timesUp, 1000);
 
 
 }
