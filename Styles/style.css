@@ -29,7 +29,6 @@ body {
   background-position: center top;
   background-repeat: no-repeat;
   background-image: url(../Images/trident.png);
-  /* background-image: url(../images/Untitled_Artwork.tiff); */
 }
 
 #startBox {
@@ -38,8 +37,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-
 
 #mainBox {
  max-width: 75%;

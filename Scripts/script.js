@@ -5,8 +5,12 @@ $(window).on("load", function() {
 // regex
 
 var yesRegex = /^(y|Y)$/ ;
+var yesString = "y"
 var noRegex = /^(n|N)$/ ;
+var nostring = "n";
 var continueRegex = /^(c|C)$/ ;
+var continueString = "c";
+
 
 // Text and Dynamic background Variables
 
@@ -42,6 +46,7 @@ var downClick = document.getElementById("down");
 
 
 // item variables
+// var trident = document.getElementById("backgroundTrident")
 var socialMedia = document.getElementById('socialMedia');
 var conchShell = document.getElementById("conch");
 var skullXBones = document.getElementById("skullXBones");
@@ -126,7 +131,7 @@ function lifeCounter() {
 // Start Game //
 
 function startGameYN() {
-   
+  // $(trident).show();
   document.addEventListener('keydown', (event) => {
     
   var name = event.key;
@@ -149,6 +154,9 @@ function startGameYN() {
 startGameYN();
 
 function chapterOne() {
+
+
+  
   $(itemsAndLives).show();
   $(satchel).show();
   $(liveOne).show();
@@ -163,7 +171,7 @@ function chapterOne() {
     if (continueRegex.test(name)) {
       mainText.style.display = "block";
       mainText.style.fontSize = "1.2em";
-      tridentBackGround.style.backgroundImage = "url(/Images/Untitled_Artwork.tiff)";
+      tridentBackGround.style.backgroundImage = "url(/Images/trident.png)";
       mainText.innerHTML = "<p>You are standing on the beach of a foggy cove. Ten feet out from shore, a beautiful woman sits on a protruding rock. She smiles at you seductively and begins singing a song. Strangely, you hear nothing but the waves lapping at your feet. Press C to continue.</p>";
       this.removeEventListener('click', arguments.callee);
       document.addEventListener('keydown', (event) => {
@@ -180,6 +188,7 @@ function chapterOne() {
 
 
 function chapterOneCont() {
+
   $(itemsBox).show();
   continueRegex = false;
   yesRegex = false;
@@ -200,6 +209,7 @@ function chapterOneCont() {
   if (skullFlag === false) {
     $(skullXBones).hide();
   }
+  tridentBackGround.style.display = "hidden";
   conchShell.style.display = "block";
   buttonMenu.style.display = "grid";
   mainText.style.display = "block";
@@ -342,7 +352,7 @@ function westResponse() {
 
 document.addEventListener('keyup', event => {
   if (event.code === 'Space') {
-    console.log('Space pressed')
+    successChapter();
   }
 })
 
@@ -422,7 +432,7 @@ function successChapter() {
 function timesUp() {
   music.play();
   $(soundOn).show();
-  setTimeout(timedMessage, 30000);
+  setTimeout(timedMessage, 10000);
   function timedMessage() {
     $(soundOn).hide();
     mainText.innerHTML = "<p>The Siren speaks, “You are brave, and it is noble of you to seek to help your people in this dark age… but if you are to succeed, you will need powers beyond your means. Go to the Cave of Mirrors, retrieve the Pearl Of The Moon, and free my sister, The White Witch. Only she can match the evil that is afoot.”</p>"
@@ -434,7 +444,7 @@ function levelComplete() {
   mainText.innerHTML = `<p>Congratulations, and thanks for playing!</p><p>Would you like to see what happens next? If so, stay in touch via <a href="https://andrewjamesbarker.bandcamp.com/" target="_blank">Bandcamp</a> and while you're at it, check out the corresponding psych-rock album 'White Witch'.</p>`;
   $(socialMedia).show();
 }
-setTimeout(timesUp, 1000);
+setTimeout(timesUp, 100);
 
 
 }
