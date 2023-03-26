@@ -156,7 +156,6 @@ startGameYN();
 function chapterOne() {
 
 
-  
   $(itemsAndLives).show();
   $(satchel).show();
   $(liveOne).show();
